@@ -10,7 +10,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   
-      <title>Not Found - Haide</title>
+      <title>processing - Tag - Haide</title>
   
 
   
@@ -148,27 +148,87 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div style="flex: 1;">
-      
+      <div class="archive-container">
 
-<style>
-    body {
-      background-color: white;
-    }
-</style>
-<div class="article" style="margin-top: 15%">
-    <div class="article-content">
-            <blockquote>
-                <img src="/images/404.gif" alt="">
-                <footer>
-                    <strong>Collect UI</strong>
-                    <cite><a href="https://medium.com/@CollectUI/404-page-design-inspiration-march-2017-f6d9f7efd054">404 Page Design Inspiration</a></cite>
-                </footer>
-            </blockquote>
-        </div>
+
+	
+		<h2 class="archive-title">#   processing</h2>
+	
+	<div class="archive-cards">
+	
+		
+
+
+
+
+<div class="Card-archive" id="hashit_58a61016c0fcb8158cb3b897088bca05178b043e072611dbca52620b8abfc2d2" data-name="processing编程实例" data-version="">
+	<mark class="Card-badge"></mark>
+	<div class="Card-body">
+		<h3 class="Card-title">
+			
+				<a href="/2017/04/05/processing编程实例/">
+			
+			Processing编程实例</a>
+		</h3>
+		<div class="Card-meta">
+			<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/processing/">Processing</a></label>
+			
+		
+	
+	</div>
+</div>
+			<ul>
+					<li>
+						<a href="/archives/">
+							<i class="fa fa-calendar"></i> 2017-04-05
+						</a>
+					</li>
+					
+					
+					<li>
+						<a href="/2017/04/05/processing编程实例/#article-comment">
+							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
+						</a>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> <span class="card-visit-count">0</span>
+					</li>
+					
+					
+			</ul>
+		</div>
+	</div>
 </div>
 
+	
+	</div>
 
 
+
+<div class="pagination">
+	
+	
+	
+	
+		
+		
+		<div class="pagination-item">
+			
+			
+				<span>1</span>
+			
+		</div>
+		
+		
+	
+	
+</div>
+</div>
   </div>
 
   
@@ -288,11 +348,68 @@
 <script type="text/javascript">
 
   
+    loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+    loadjs.ready('post-version', {
+      success: function(){
+        console.log('ready to run badge script')
+        
+          
+          
+          
+            var postBadge = document.querySelector('#hashit_58a61016c0fcb8158cb3b897088bca05178b043e072611dbca52620b8abfc2d2 mark.Card-badge');
+            $(postBadge).fadeOut();
+            
+          
+        
+      }
+    })
+  
 </script>
 
 
     
 <script type="text/javascript">
+  
+    function getIP(json) {
+      loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+    loadjs.ready('post-visit-comment-count', {
+      success: function(){
+          LeanCloud.init('W37TluhbhyTweMeX5SuS2P2u-gzGzoHsz', 'qBoo1UkA3IKNnVuYNav04ARX');
+          var leanCloud = LeanCloud.getInstance();
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2017/04/05/processing编程实例/', json.ip);
+          leanCloud.fetchCommentCount('/2017/04/05/processing编程实例/');
+          leanCloud.fetchVisitCount('/2017/04/05/processing编程实例/');
+          leanCloud.fetchThumbUpCount('/2017/04/05/processing编程实例/');
+          leanCloud.getCommentCount('/2017/04/05/processing编程实例/', function(count){
+              var el = document.querySelector('#hashit_58a61016c0fcb8158cb3b897088bca05178b043e072611dbca52620b8abfc2d2 .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2017/04/05/processing编程实例/', function(count){
+              var el = document.querySelector('#hashit_58a61016c0fcb8158cb3b897088bca05178b043e072611dbca52620b8abfc2d2 .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2017/04/05/processing编程实例/', function(count){
+              var el = document.querySelector('#hashit_58a61016c0fcb8158cb3b897088bca05178b043e072611dbca52620b8abfc2d2 .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2017/04/05/processing编程实例/', function(isThumbUp){
+              var el = document.querySelector('#hashit_58a61016c0fcb8158cb3b897088bca05178b043e072611dbca52620b8abfc2d2 .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+      }
+    })
+    }
   
 </script>
 
@@ -310,6 +427,20 @@ initHeadroom();
 
 changeLayoutOnTouchScreen();
 
+// 
+// var post = new Post('W37TluhbhyTweMeX5SuS2P2u-gzGzoHsz', 'qBoo1UkA3IKNnVuYNav04ARX');
+// $('.Card-archive').each(function(){
+//     var post_url = $(this).attr('id');
+//     var true_url = $(this).find('.Card-title a').first().attr('href');
+//     var card = this;
+//     post.getCommentCount(post_url, function(count){
+//         $(card).find('.card-comment-count').first().text(count);
+//     });
+//     post.getVisitCount(post_url, function(count){
+//         $(card).find('.card-visit-count').first().text(count);
+//     });
+    
+// });
 // 
 </script>
 
