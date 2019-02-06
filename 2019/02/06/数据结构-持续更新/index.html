@@ -123,7 +123,7 @@
 		
 				<div class="nav-icon">
 				
-			<a href="/archives/" title="Archivi">
+			<a href="/archives/" title="Archives">
 			<img src="/images/icons/blue-shadow/archive.svg" alt="">
 			</a>
 		</div>
@@ -132,7 +132,7 @@
 		
 		<div class="nav-icon">
 		
-			<a href="/search/" title="Cerca">
+			<a href="/search/" title="Search">
 			<img src="/images/icons/blue-shadow/search.svg" alt="">
 			</a>
 		</div>
@@ -296,8 +296,12 @@
 </div>
 <div class="card-text">
   <p id="text-post-summary">数据结构(严蔚敏版)
-第一章1.1 什么是数据结构定义：数据结构是一门研究非数值计算的程序设计问题中计算机的操作对象以及它们之间的关系和操作等等的学科。
-1.2 基础概念和术语数据(Data)：对客观事物的符号表示，在计算机科学中是指所有能输入到计算机中并被计算机程序处理的符号的总称，它是计算机程序加工的“原料”。
+
+第一章
+1.1 什么是数据结构
+定义：数据结构是一门研究非数值计算的程序设计问题中计算机的操作对象以及它们之间的关系和操作等等的学科。
+1.2 基础概念和术语
+数据(Data)：对客观事物的符号表示，在计算机科学中是指所有能输入到计算机中并被计算机程序处理的符号的总称，它是计算机程序加工的“原料”。
 数据元素(Data Element)：数据的基本单元，在计算机程序中通常作为一个整体进行考虑和处理。
 
 数据项(Data Item)：有时一个数据元素可由若干个数据项组成。数据项是数据的不可分割的最小单位。
@@ -328,9 +332,13 @@
 
     </div>
     <div class="article-content">
-    <h1 id="数据结构-严蔚敏版"><a href="#数据结构-严蔚敏版" class="headerlink" title="数据结构(严蔚敏版)"></a>数据结构(严蔚敏版)</h1><a id="more"></a>
-<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="1-1-什么是数据结构"><a href="#1-1-什么是数据结构" class="headerlink" title="1.1 什么是数据结构"></a>1.1 什么是数据结构</h3><p><strong>定义：</strong>数据结构是一门研究<em>非数值计算</em>的程序设计问题中<em>计算机的操作对象以及它们之间的关系和操作</em>等等的学科。</p>
-<h3 id="1-2-基础概念和术语"><a href="#1-2-基础概念和术语" class="headerlink" title="1.2 基础概念和术语"></a>1.2 基础概念和术语</h3><p><strong>数据(Data)</strong>：对<em>客观事物</em>的<em>符号表示</em>，在计算机科学中是指所有能输入到计算机中并被计算机程序处理的符号的总称，它是计算机程序加工的“原料”。</p>
+    <h1 id="数据结构-严蔚敏版">数据结构(严蔚敏版)</h1>
+<a id="more"></a>
+<h2 id="第一章">第一章</h2>
+<h3 id="1-1-什么是数据结构">1.1 什么是数据结构</h3>
+<p><em><em>定义：<em><em>数据结构是一门研究</em>非数值计算</em>的程序设计问题中</em>计算机的操作对象以及它们之间的关系和操作</em>等等的学科。</p>
+<h3 id="1-2-基础概念和术语">1.2 基础概念和术语</h3>
+<p><strong>数据(Data)</strong>：对<em>客观事物</em>的<em>符号表示</em>，在计算机科学中是指所有能输入到计算机中并被计算机程序处理的符号的总称，它是计算机程序加工的“原料”。</p>
 <p><strong>数据元素(Data Element)</strong>：数据的基本单元，在计算机程序中通常作为一个整体进行考虑和处理。</p>
 <ul>
 <li><strong>数据项(Data Item)</strong>：有时一个数据元素可由若干个数据项组成。数据项是数据的不可分割的最小单位。</li>
@@ -338,18 +346,21 @@
 <p><strong>数据对象(Data Object)</strong>：是<em>性质相同的数据元素的集合</em>，是数据的一个子集。</p>
 <p><strong>数据结构(Data Structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
 <ul>
-<li><p><strong>结构</strong>：数据元素相互之间的关系称为<strong>结构(Structure)</strong></p>
+<li>
+<p><strong>结构</strong>：数据元素相互之间的关系称为<strong>结构(Structure)</strong></p>
 <ul>
-<li>基本结构：<ul>
+<li>基本结构：
+<ul>
 <li><strong>集合</strong>：结构中的数据元素之间除了“同属于一个集合”的关系外，别无其他关系。</li>
 <li><strong>线性结构</strong>：存在一个对一个的关系。</li>
 <li><strong>树形结构</strong>：存在一个对多个的关系。</li>
-<li><strong>图状结构或网状结构：</strong>存在多个对多个的关系。</li>
+<li>**图状结构或网状结构：**存在多个对多个的关系。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><strong>形式化定义</strong>：数据结构是一个二元组：$DataStructure = (D, S)$ 其中，D是数据元素的有限集，S是D上关系的有限集。</p>
+<li>
+<p><strong>形式化定义</strong>：数据结构是一个二元组：$DataStructure = (D, S)$ 其中，D是数据元素的有限集，S是D上关系的有限集。</p>
 </li>
 </ul>
 
@@ -360,7 +371,7 @@
         <div class="article-comment" id="article-comment">
             
 
-<h1>Commento</h1>
+<h1>Comment</h1>
 
   
     <div id="comment-not-available">
@@ -381,7 +392,7 @@
     <div class="footer-copyright">
         <div>
             <p> Copyright by <a href="">Ralph H </a> @ 2019</p>
-            <p>Designed by: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> e <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; Tema: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-Taurus</a> &bull; Powered by <a href="http://hexo.io">Hexo.</a></p>
+            <p>Designed by: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> and <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; Theme: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-Taurus</a> &bull; Powered by <a href="http://hexo.io">Hexo.</a></p>
         </div>
     </div>
     
@@ -419,7 +430,7 @@
 		
 				<div class="nav-icon">
 				
-			<a href="/archives/" title="Archivi">
+			<a href="/archives/" title="Archives">
 			<img src="/images/icons/blue-shadow/archive.svg" alt="">
 			</a>
 		</div>
@@ -428,7 +439,7 @@
 		
 		<div class="nav-icon">
 		
-			<a href="/search/" title="Cerca">
+			<a href="/search/" title="Search">
 			<img src="/images/icons/blue-shadow/search.svg" alt="">
 			</a>
 		</div>
@@ -487,7 +498,7 @@
   loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
   loadjs.ready('post-version', function(){
     
-    new Postv2('hashit_7af82d22c6a4ace3b45dbbf159283f179d508b80cf2c93661151f5abab1f93f0').update('hashit_debc7719d645962d6e70e08a371332fccc88dbe48df70998978c7d2bf4e0e17a', function(){});
+    new Postv2('hashit_7af82d22c6a4ace3b45dbbf159283f179d508b80cf2c93661151f5abab1f93f0').update('hashit_bd7c7d734e1e74835995873b2e02abb0358df4ef0ecc52b5a3e01ca51c9faf23', function(){});
   });
   
 </script>
