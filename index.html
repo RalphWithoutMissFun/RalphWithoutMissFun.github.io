@@ -234,6 +234,14 @@
 						</li>
 						
 						
+						<li class="card-comment">
+							<a href="/2019/02/06/数据结构-持续更新/#article-comment">
+								<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
+							</a>
+						</li>
+						<li class="card-visitor"><i class="fa fa-eye"></i> <span class="card-visit-count">0</span></li>
+						<li class="card-thumbup-container"><i class="far fa-thumbs-up"></i> <span class="card-thumbup-count">0</span></li>
+						
 						
 				</ul>
 			</div>
@@ -331,6 +339,23 @@
 
 
     
+    
+    
+    
+<script>
+    new Valine({
+        el: '#valine',
+        notify:false, 
+        verify:false,
+        appId: 'W37TluhbhyTweMeX5SuS2P2u-gzGzoHsz',
+        appKey: 'qBoo1UkA3IKNnVuYNav04ARX',
+        placeholder: '',
+        path:window.location.pathname, 
+        avatar:'retro',
+        lang: 'en'
+    });
+</script>
+
 
 
 
@@ -379,6 +404,55 @@
 </script>
 
 
+    
+<script type="text/javascript">
+  
+    function getIP(json) {
+      loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+    loadjs.ready('post-visit-comment-count', {
+      success: function(){
+          LeanCloud.init('W37TluhbhyTweMeX5SuS2P2u-gzGzoHsz', 'qBoo1UkA3IKNnVuYNav04ARX');
+          var leanCloud = LeanCloud.getInstance();
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2019/02/06/数据结构-持续更新/', json.ip);
+          leanCloud.fetchCommentCount('/2019/02/06/数据结构-持续更新/');
+          leanCloud.fetchVisitCount('/2019/02/06/数据结构-持续更新/');
+          leanCloud.fetchThumbUpCount('/2019/02/06/数据结构-持续更新/');
+          leanCloud.getCommentCount('/2019/02/06/数据结构-持续更新/', function(count){
+              var el = document.querySelector('#hashit_7af82d22c6a4ace3b45dbbf159283f179d508b80cf2c93661151f5abab1f93f0 .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2019/02/06/数据结构-持续更新/', function(count){
+              var el = document.querySelector('#hashit_7af82d22c6a4ace3b45dbbf159283f179d508b80cf2c93661151f5abab1f93f0 .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2019/02/06/数据结构-持续更新/', function(count){
+              var el = document.querySelector('#hashit_7af82d22c6a4ace3b45dbbf159283f179d508b80cf2c93661151f5abab1f93f0 .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2019/02/06/数据结构-持续更新/', function(isThumbUp){
+              var el = document.querySelector('#hashit_7af82d22c6a4ace3b45dbbf159283f179d508b80cf2c93661151f5abab1f93f0 .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+      }
+    })
+    }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
 
 <!-- <script src="/js/post.js"></script> -->
 
@@ -391,7 +465,7 @@ initHeadroom();
 changeLayoutOnTouchScreen();
 
 // 
-// var post = new Post('', '');
+// var post = new Post('W37TluhbhyTweMeX5SuS2P2u-gzGzoHsz', 'qBoo1UkA3IKNnVuYNav04ARX');
 // console.log(post);
 // $('.Card').each(function(){
 //     var post_url = $(this).attr('id');
