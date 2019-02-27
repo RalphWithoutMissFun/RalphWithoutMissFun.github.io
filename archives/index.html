@@ -168,6 +168,62 @@
 
 
 
+<div class="Card-archive" id="hashit_ab93cfbb717141551e8a193123f52d31bdcffcce255976a1a759767784d72009" data-name="嵌入式系统第一周" data-version="">
+	<mark class="Card-badge"></mark>
+	<div class="Card-body">
+		<h3 class="Card-title">
+			
+				<a href="/2019/02/27/嵌入式系统第一周/">
+			
+			嵌入式系统第一周</a>
+		</h3>
+		<div class="Card-meta">
+			<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/嵌入式/">嵌入式</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/笔记/">笔记</a></label>
+			
+		
+	
+	</div>
+</div>
+			<ul>
+					<li>
+						<a href="/archives/">
+							<i class="fa fa-calendar"></i> 2019-02-27
+						</a>
+					</li>
+					
+					
+					<li>
+						<a href="/2019/02/27/嵌入式系统第一周/#article-comment">
+							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
+						</a>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> <span class="card-visit-count">0</span>
+					</li>
+					
+					
+			</ul>
+		</div>
+	</div>
+</div>
+
+	
+		
+
+
+
+
 <div class="Card-archive" id="hashit_dd29e5e86074a92d3d1849f4529aa47d9c8bf5f2c678340999b3c1d74e9eda28" data-name="数据结构 第一章" data-version="">
 	<mark class="Card-badge"></mark>
 	<div class="Card-body">
@@ -420,6 +476,14 @@
           
           
           
+            var postBadge = document.querySelector('#hashit_ab93cfbb717141551e8a193123f52d31bdcffcce255976a1a759767784d72009 mark.Card-badge');
+            $(postBadge).fadeOut();
+            
+          
+        
+          
+          
+          
             var postBadge = document.querySelector('#hashit_dd29e5e86074a92d3d1849f4529aa47d9c8bf5f2c678340999b3c1d74e9eda28 mark.Card-badge');
             $(postBadge).fadeOut();
             
@@ -448,6 +512,36 @@
       success: function(){
           LeanCloud.init('W37TluhbhyTweMeX5SuS2P2u-gzGzoHsz', 'qBoo1UkA3IKNnVuYNav04ARX');
           var leanCloud = LeanCloud.getInstance();
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2019/02/27/嵌入式系统第一周/', json.ip);
+          leanCloud.fetchCommentCount('/2019/02/27/嵌入式系统第一周/');
+          leanCloud.fetchVisitCount('/2019/02/27/嵌入式系统第一周/');
+          leanCloud.fetchThumbUpCount('/2019/02/27/嵌入式系统第一周/');
+          leanCloud.getCommentCount('/2019/02/27/嵌入式系统第一周/', function(count){
+              var el = document.querySelector('#hashit_ab93cfbb717141551e8a193123f52d31bdcffcce255976a1a759767784d72009 .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2019/02/27/嵌入式系统第一周/', function(count){
+              var el = document.querySelector('#hashit_ab93cfbb717141551e8a193123f52d31bdcffcce255976a1a759767784d72009 .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2019/02/27/嵌入式系统第一周/', function(count){
+              var el = document.querySelector('#hashit_ab93cfbb717141551e8a193123f52d31bdcffcce255976a1a759767784d72009 .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2019/02/27/嵌入式系统第一周/', function(isThumbUp){
+              var el = document.querySelector('#hashit_ab93cfbb717141551e8a193123f52d31bdcffcce255976a1a759767784d72009 .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
         
           
           

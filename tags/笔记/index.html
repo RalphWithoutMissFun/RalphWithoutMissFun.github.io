@@ -10,7 +10,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   
-      <title>2019 - Archive - Haide</title>
+      <title>笔记 - Tag - Haide</title>
   
 
   
@@ -107,7 +107,7 @@
 	
 	<div class="nav-item" id="nav-item-archive">
 		
-				<div class="nav-icon active_dot">
+				<div class="nav-icon">
 				
 			<a href="/archives/" title="归档">
 			<img src="/images/icons/blue-shadow/archive.svg" alt="">
@@ -148,12 +148,11 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div style="flex: 1;">
-      
-	
-	
+      <div class="archive-container">
+
 
 	
-		<h2 class="archive-title">2019</h2>
+		<h2 class="archive-title">#   笔记</h2>
 	
 	<div class="archive-cards">
 	
@@ -213,67 +212,29 @@
 </div>
 
 	
-		
-
-
-
-
-<div class="Card-archive" id="hashit_dd29e5e86074a92d3d1849f4529aa47d9c8bf5f2c678340999b3c1d74e9eda28" data-name="数据结构 第一章" data-version="">
-	<mark class="Card-badge"></mark>
-	<div class="Card-body">
-		<h3 class="Card-title">
-			
-				<a href="/2019/02/06/数据结构-第一章/">
-			
-			数据结构 第一章</a>
-		</h3>
-		<div class="Card-meta">
-			<div class="Card-tags">
-<div class="tags">
-	
-		
-			
-				<label class="tag-1"><a href="/tags/复习/">复习</a></label>
-			
-		
-	
-		
-			
-				<label class="tag-2"><a href="/tags/数据结构/">数据结构</a></label>
-			
-		
-	
 	</div>
-</div>
-			<ul>
-					<li>
-						<a href="/archives/">
-							<i class="fa fa-calendar"></i> 2019-02-06
-						</a>
-					</li>
-					
-					
-					<li>
-						<a href="/2019/02/06/数据结构-第一章/#article-comment">
-							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
-						</a>
-					</li>
-					<li>
-						<i class="fa fa-eye"></i> <span class="card-visit-count">0</span>
-					</li>
-					
-					
-			</ul>
+
+
+
+<div class="pagination">
+	
+	
+	
+	
+		
+		
+		<div class="pagination-item">
+			
+			
+				<span>1</span>
+			
 		</div>
-	</div>
+		
+		
+	
+	
 </div>
-
-	
-	</div>
-
-
-	
-
+</div>
   </div>
 
   
@@ -310,7 +271,7 @@
 	
 	<div class="nav-item" id="nav-item-archive">
 		
-				<div class="nav-icon active_dot">
+				<div class="nav-icon">
 				
 			<a href="/archives/" title="归档">
 			<img src="/images/icons/blue-shadow/archive.svg" alt="">
@@ -406,14 +367,6 @@
             
           
         
-          
-          
-          
-            var postBadge = document.querySelector('#hashit_dd29e5e86074a92d3d1849f4529aa47d9c8bf5f2c678340999b3c1d74e9eda28 mark.Card-badge');
-            $(postBadge).fadeOut();
-            
-          
-        
       }
     })
   
@@ -451,36 +404,6 @@
           });
           leanCloud.isThumbUp('/2019/02/27/嵌入式系统第一周/', function(isThumbUp){
               var el = document.querySelector('#hashit_ab93cfbb717141551e8a193123f52d31bdcffcce255976a1a759767784d72009 .card-thumbup-container i');
-              if(el){
-                if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
-                }else{
-                  el.className = 'far fa-thumbs-up';
-                }
-              }
-          });
-        
-          
-          
-          // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2019/02/06/数据结构-第一章/', json.ip);
-          leanCloud.fetchCommentCount('/2019/02/06/数据结构-第一章/');
-          leanCloud.fetchVisitCount('/2019/02/06/数据结构-第一章/');
-          leanCloud.fetchThumbUpCount('/2019/02/06/数据结构-第一章/');
-          leanCloud.getCommentCount('/2019/02/06/数据结构-第一章/', function(count){
-              var el = document.querySelector('#hashit_dd29e5e86074a92d3d1849f4529aa47d9c8bf5f2c678340999b3c1d74e9eda28 .card-comment-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getVisitCount('/2019/02/06/数据结构-第一章/', function(count){
-              var el = document.querySelector('#hashit_dd29e5e86074a92d3d1849f4529aa47d9c8bf5f2c678340999b3c1d74e9eda28 .card-visit-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getThumbUpCount('/2019/02/06/数据结构-第一章/', function(count){
-              var el = document.querySelector('#hashit_dd29e5e86074a92d3d1849f4529aa47d9c8bf5f2c678340999b3c1d74e9eda28 .card-thumbup-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.isThumbUp('/2019/02/06/数据结构-第一章/', function(isThumbUp){
-              var el = document.querySelector('#hashit_dd29e5e86074a92d3d1849f4529aa47d9c8bf5f2c678340999b3c1d74e9eda28 .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
