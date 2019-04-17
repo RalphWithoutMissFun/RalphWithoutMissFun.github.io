@@ -123,7 +123,7 @@
 		
 				<div class="nav-icon">
 				
-			<a href="/archives/" title="Archives">
+			<a href="/archives/" title="Archivi">
 			<img src="/images/icons/blue-shadow/archive.svg" alt="">
 			</a>
 		</div>
@@ -132,7 +132,7 @@
 		
 		<div class="nav-icon">
 		
-			<a href="/search/" title="Search">
+			<a href="/search/" title="Cerca">
 			<img src="/images/icons/blue-shadow/search.svg" alt="">
 			</a>
 		</div>
@@ -305,19 +305,14 @@
   <h3>Quick Read</h3>
 </div>
 <div class="card-text">
-  <p id="text-post-summary">班上，有一个用c++做小游戏打飞机的模拟,类似我们玩的雷电什么得，觉得麻烦，就先用processing做了一个demo,代码如下，发现，好久都没有碰processing了，上次碰，还是两个月寒假的时候做游戏的时候。
-简易版demo
-
-有完善版本的时候，再修改吧。
-1。简单操作鼠标点击，来完成游戏界面之外操作
-2。鼠标点击，发射
-3。 鼠标移动，控制飞机移动
+  <p id="text-post-summary">班上，有一个用c++做小游戏打飞机的模拟,类似我们玩的雷电什么得，觉得麻烦，就先用processing做了一个demo,代码如下，发现，好久都没有碰processing了，上次碰，还是两个月寒假的时候做游戏的时候。简易版demo有完善版本的时候，再修改吧。1。简单操作鼠标点击，来完成游戏界面之外操作2。鼠标点击，发射3。 鼠标移动，控制飞机移动
 
 键盘上按键s停止
 欢迎界面，规则界面，游戏主界面，中途暂停界面，完结，数据汇总界面
 
 import ddf.minim.spi.*;
 import ddf.minim.signals.*;
+import ddf.minim.*;
 import...</p>
 </div>
         </div> -->
@@ -344,14 +339,8 @@ import...</p>
 
     </div>
     <div class="article-content">
-    <p>班上，有一个用c++做小游戏打飞机的模拟,类似我们玩的雷电什么得，觉得麻烦，就先用processing做了一个demo,代码如下，发现，好久都没有碰processing了，上次碰，还是两个月寒假的时候做游戏的时候。<br>
-简易版demo</p>
-<a id="more"></a>
-<p>有完善版本的时候，再修改吧。<br>
-1。简单操作鼠标点击，来完成游戏界面之外操作
-2。鼠标点击，发射
-3。 鼠标移动，控制飞机移动</p>
-<ol start="4">
+    <p>班上，有一个用c++做小游戏打飞机的模拟,类似我们玩的雷电什么得，觉得麻烦，就先用processing做了一个demo,代码如下，发现，好久都没有碰processing了，上次碰，还是两个月寒假的时候做游戏的时候。<br>简易版demo<br><a id="more"></a><br>有完善版本的时候，再修改吧。<br>1。简单操作鼠标点击，来完成游戏界面之外操作<br>2。鼠标点击，发射<br>3。 鼠标移动，控制飞机移动</p>
+<ol>
 <li>键盘上按键s停止</li>
 <li>欢迎界面，规则界面，游戏主界面，中途暂停界面，完结，数据汇总界面</li>
 </ol>
@@ -390,16 +379,16 @@ void setup(){
 }
 
 void draw(){
-  
+
   if(start == 0){
-     
+
      fill(#E3E3E3);
      textAlign(CENTER);
      textSize(44);
      fill(    #EE6AA7);
      text(&quot;START&quot;,0.5 * width ,0.5 *  height);
      fill(#E3E3E3);
-     
+
   }
     if(start == 1){
       if(lasting == 1) {
@@ -413,13 +402,13 @@ void draw(){
       if(life &lt;= 0) start = 2;
     if(energy &lt; 200 &amp;&amp; flag == 0)
     energy += 0.6;
-    
+
     for(int index = 0 ; index &lt; 5 ; index++){
       if(direction[index].y &lt; max)
     direction[index].y *= 1.001;
   }
     background(0);
-    
+
     textAlign(CENTER);
     text(&quot;KILLED: &quot;+count , 450, 50);
     text(&quot;TIME: &quot;+time , 450, 20);
@@ -427,12 +416,12 @@ void draw(){
     textSize(20);
     rect(10,50,60,20);
     fill(#EE2C2C);
-    
+
     if(life &gt;= 0)
     rect(10,50,30 * 0.1 * life ,20);
     fill(#E3E3E3);
     rect(10,20,60,20);
-     
+
     if(energy &gt;= 150){
       fill(    #EE2C2C );
     rect(10,20,30 * 0.01 * energy ,20);
@@ -442,7 +431,7 @@ void draw(){
   fill(#FFD700);
     rect(10,20,30 * 0.01 * energy ,20);
   }
- 
+
   else{
     if(energy &lt; 100){
     fill(#D1EEEE);
@@ -462,9 +451,9 @@ void draw(){
          enemy[index].x = random(100,500);
      }
     }
-    
+
      fill(#9932CC);
-   
+
     fill(#9932CC);{
     fill(  #F8F8FF);
     for(int index = 0 ; index &lt; 5 ; index++)
@@ -485,7 +474,7 @@ void draw(){
       flag = 1;
     stroke(#F8F8FF);
     line(mouseX,580,mouseX,0);
-   
+
     for(int index = 0 ; index &lt; 5 ; index++)
     {
        if(enemy[index].x - mouseX &lt;= 10 &amp;&amp; enemy[index].x - mouseX &gt;= -10)
@@ -515,7 +504,7 @@ fill(#E3E3E3);
 
 if(start == 3){
      background(0);
-    
+
     textAlign(CENTER);
     text(&quot;KILLED: &quot;+count , 450, 50);
     text(&quot;TIME: &quot;+time , 450, 20);
@@ -523,12 +512,12 @@ if(start == 3){
     textSize(20);
     rect(10,50,60,20);
     fill(#EE2C2C);
-    
+
     if(life &gt;= 0)
     rect(10,50,30 * 0.1 * life ,20);
     fill(#E3E3E3);
     rect(10,20,60,20);
-     
+
     if(energy &gt;= 150){
       fill(    #EE2C2C );
     rect(10,20,30 * 0.01 * energy ,20);
@@ -538,7 +527,7 @@ if(start == 3){
   fill(#FFD700);
     rect(10,20,30 * 0.01 * energy ,20);
   }
- 
+
   else{
     if(energy &lt; 100){
     fill(#D1EEEE);
@@ -558,7 +547,7 @@ if(start == 3){
      line(120,20,60,30);
      line(120,60,60,70);
      textSize(22);
-     
+
      text(&quot;RULE&quot;,300 , 150);
      textAlign(LEFT);
      text(&quot;1. you can use your mouse to control the plane&quot;,10 , 190);
@@ -570,15 +559,15 @@ if(start == 3){
      text(&quot;PLAY NOW CLICKHERE&quot;,300 , 450);
      stroke(#EE6AA7);
      fill(#E3E3E3);
-     
-     
+
+
 }
   if(start == 5){
-  
+
   }
 }
 void mousePressed(){
-   
+
    if(start == 3){
      if(mousePressed &amp;&amp; mouseX &gt;= 200 &amp;&amp; mouseX &lt;= 500 &amp;&amp; mouseY &gt;= 400 &amp;&amp; mouseY &lt;= 500)
      start = 1 ;
@@ -589,22 +578,14 @@ void mousePressed(){
    }
 }
 void keyPressed(){
-    if(key == 's'){
+    if(key == &#39;s&#39;){
     lasting = 1 - lasting;
     if(lasting == 0)
   start = 1;  
 }
-    
+
 }
-
-
-</code></pre>
-<p>效果，简易版的比较low，大家不要喷啊。<br>
-<img src="http://img.blog.csdn.net/20170415203748797?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUkFMUEhGSlk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="起始"><br>
-<img src="http://img.blog.csdn.net/20170415203815438?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUkFMUEhGSlk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">
-<img src="http://img.blog.csdn.net/20170415203841430?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUkFMUEhGSlk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">
-<img src="http://img.blog.csdn.net/20170415203907008?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUkFMUEhGSlk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">
-<img src="http://img.blog.csdn.net/20170415204051384?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUkFMUEhGSlk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+</code></pre><p>效果，简易版的比较low，大家不要喷啊。<br><img src="http://img.blog.csdn.net/20170415203748797?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUkFMUEhGSlk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="起始"><br><img src="http://img.blog.csdn.net/20170415203815438?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUkFMUEhGSlk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20170415203841430?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUkFMUEhGSlk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20170415203907008?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUkFMUEhGSlk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20170415204051384?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUkFMUEhGSlk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 
     
     </div>
@@ -613,7 +594,7 @@ void keyPressed(){
         <div class="article-comment" id="article-comment">
             
 
-<h1>Comment</h1>
+<h1>Commento</h1>
 
   
     <div id="valine"></div>
@@ -631,7 +612,7 @@ void keyPressed(){
     <div class="footer-copyright">
         <div>
             <p> Copyright by <a href="">Ralph H </a> @ 2019</p>
-            <p>Designed by: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> and <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; Theme: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-Taurus</a> &bull; Powered by <a href="http://hexo.io">Hexo.</a></p>
+            <p>Designed by: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> e <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; Tema: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-Taurus</a> &bull; Powered by <a href="http://hexo.io">Hexo.</a></p>
         </div>
     </div>
     
@@ -675,7 +656,7 @@ void keyPressed(){
 		
 				<div class="nav-icon">
 				
-			<a href="/archives/" title="Archives">
+			<a href="/archives/" title="Archivi">
 			<img src="/images/icons/blue-shadow/archive.svg" alt="">
 			</a>
 		</div>
@@ -684,7 +665,7 @@ void keyPressed(){
 		
 		<div class="nav-icon">
 		
-			<a href="/search/" title="Search">
+			<a href="/search/" title="Cerca">
 			<img src="/images/icons/blue-shadow/search.svg" alt="">
 			</a>
 		</div>
@@ -760,7 +741,7 @@ void keyPressed(){
   loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
   loadjs.ready('post-version', function(){
     
-    new Postv2('hashit_58a61016c0fcb8158cb3b897088bca05178b043e072611dbca52620b8abfc2d2').update('hashit_081720a50d614a75ed546717a0f56505c7178511d6124fa39be72584433695b1', function(){});
+    new Postv2('hashit_58a61016c0fcb8158cb3b897088bca05178b043e072611dbca52620b8abfc2d2').update('hashit_4747cafeccbaec74a74419e57a3bb9376def29899985c0e4b4c36ba98afbb5e7', function(){});
   });
   
 </script>
