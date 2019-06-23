@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>系统分析大作业系列博客二 - Haide</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="Ralph H">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+        <link rel="stylesheet" href="/css/scheme-taurus/animations.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+    <script src="//cdn1.lncld.net/static/js/3.6.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-logo">
+			<a href="/">
+				<img src="/images/favicon.jpg">
+			</a>
+		</div>
+		<div class="header-text">
+			<h1>
+				<a href="/">Haide</a>
+			</h1>
+			<subtitle>
+				understated
+			</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">shiny应用与搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简介"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用的包"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">使用的包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据获取"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">数据获取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ui类编写"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">ui类编写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#server端编写"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">server端编写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网站应用的运行与部署"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">网站应用的运行与部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#此外"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">此外</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#相应学习资源"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">相应学习资源</span></a></li></ol></li></ol>
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons/blue-shadow/toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="Archives">
+			<img src="/images/icons/blue-shadow/archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="Search">
+			<img src="/images/icons/blue-shadow/search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons/blue-shadow/menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+    
+    
+        
+    
+
+    
+        
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2019/06/23/系统分析大作业系列博客二/" data-name="系统分析大作业系列博客二" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/homework.png" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2019/06/23/系统分析大作业系列博客二/">
+                系统分析大作业系列博客二
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2019-06-23</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> Ralph H</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/作业/">作业</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/系统分析/">系统分析</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                Ralph H
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">系统分析大作业系列博客二：shiny简介与应用搭建
+
+shiny应用与搭建
+简介
+因为系统分析设计课程作业需要设计一个小型挣闲钱网站应用的开发。自己每周日花了点时间先做了一个其他应用的demo来熟悉相应开发流程，虽然最后没有小组选择传统的restful架构然后这部分内容并没有在后续阶段中获得相应使用，留此博客作为该阶段学习的笔记。
+在选择相应的开发工具时，想到了之前一直想了解，但没有去深入学习的R shiny框架，作为一个R语言的死粉，当然要紧跟着rstudio的脚步啦。
+这里对R...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">shiny应用与搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简介"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用的包"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">使用的包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据获取"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">数据获取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ui类编写"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">ui类编写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#server端编写"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">server端编写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网站应用的运行与部署"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">网站应用的运行与部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#此外"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">此外</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#相应学习资源"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">相应学习资源</span></a></li></ol></li></ol>
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons/blue-shadow/toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <p>系统分析大作业系列博客二：shiny简介与应用搭建</p>
+<a id="more"></a>
+<h1>shiny应用与搭建</h1>
+<h4 id="简介">简介</h4>
+<p>因为系统分析设计课程作业需要设计一个小型挣闲钱网站应用的开发。自己每周日花了点时间先做了一个其他应用的demo来熟悉相应开发流程，虽然最后没有小组选择传统的restful架构然后这部分内容并没有在后续阶段中获得相应使用，留此博客作为该阶段学习的笔记。</p>
+<p>在选择相应的开发工具时，想到了之前一直想了解，但没有去深入学习的R shiny框架，作为一个R语言的死粉，当然要紧跟着rstudio的脚步啦。</p>
+<p>这里对R shiny做一个简单介绍，shiny是一个基于R语言的快速网站开发框架，对相应网站前后端高度封装，采用前后端分离技术
+<img src="https://www.rstudio.com/wp-content/uploads/2014/04/shiny.png" width="200" height="200/"></p>
+<p>第一个强大之处在于高度封装，对于shiny应用，主要编写两个模块,ui模块与server模块，ui模块中的output类与server模块的render类进行相互的辅助达到相应的交互效果。</p>
+<p>R shiny的另一个强大之处在于对原生网站开发工具的兼容性，在R shiny中可以使用jquery, vue, react等工具。</p>
+<p>此外，相对于其他网站开发流程，R shiny app的部署相对便捷，shinyapps.io提供用户免费部署应用的服务，虽然拥有一些限制（应用个数等），但是无需申请租用服务器，若自己拥有服务器，则可在服务器上安装rstudio提供的shiny server。</p>
+<p>好了，来谈谈我们的项目</p>
+<h4 id="使用的包">使用的包</h4>
+<p>总所周知，R的包是非常强大的，这里我们采用下列包来搭建相应应用</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(shiny)</span><br><span class="line"><span class="keyword">library</span>(DT)</span><br><span class="line"><span class="keyword">library</span>(shinyWidgets)</span><br><span class="line"><span class="keyword">library</span>(rvest)</span><br><span class="line"><span class="keyword">library</span>(plyr)</span><br><span class="line"><span class="keyword">library</span>(shinymaterial)</span><br><span class="line"><span class="keyword">library</span>(shinyAce)</span><br><span class="line"><span class="keyword">library</span>(shiny)</span><br><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line"><span class="keyword">library</span>(ggthemr)</span><br><span class="line"><span class="keyword">library</span>(shinythemes)</span><br><span class="line"><span class="keyword">library</span>(shinydashboard)</span><br><span class="line"><span class="keyword">library</span>(dashboardthemes)</span><br><span class="line"><span class="keyword">library</span>(shinycssloaders)</span><br><span class="line"><span class="keyword">library</span>(leaflet)</span><br><span class="line"><span class="keyword">library</span>(shinyjs)</span><br><span class="line"><span class="keyword">library</span>(weatherr)</span><br><span class="line"><span class="keyword">library</span>(RMySQL)</span><br><span class="line"><span class="keyword">library</span>(sweetalertR)</span><br></pre></td></tr></table></figure>
+<h4 id="数据获取">数据获取</h4>
+<p>因为是demo，所以没有将数据库加入我们的应用中，所有数据均从网页api中获取，这里采用网上的相应api访问代码，封装为相应函数。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">fetchData &lt;- <span class="keyword">function</span>(city, date)&#123;</span><br><span class="line">  </span><br><span class="line">  baseUrl &lt;- <span class="string">'http://lishi.tianqi.com/'</span></span><br><span class="line">  Url &lt;- paste(baseUrl, city, <span class="string">'/'</span>, date, <span class="string">'.html'</span>, sep = <span class="string">''</span>)</span><br><span class="line">  </span><br><span class="line">  content &lt;- Url %&gt;%</span><br><span class="line">    read_html(encoding=<span class="string">'GBK'</span>) %&gt;%</span><br><span class="line">    html_nodes(<span class="string">'div.tqtongji2'</span>) %&gt;%</span><br><span class="line">    html_nodes(<span class="string">"ul"</span>) %&gt;%</span><br><span class="line">    html_text() %&gt;%</span><br><span class="line">    strsplit(<span class="string">"\\s&#123;4,&#125;"</span>)</span><br><span class="line">  </span><br><span class="line">  content &lt;- ldply(content[-<span class="number">1</span>])</span><br><span class="line">  names(content) &lt;- c(<span class="string">'date'</span>, <span class="string">'highDegree'</span>, <span class="string">'lowDegree'</span>, <span class="string">'weather'</span>, <span class="string">'windDirection'</span>, <span class="string">'windForce'</span>)</span><br><span class="line">  <span class="keyword">return</span>(content) </span><br><span class="line">&#125;</span><br><span class="line">fetchData2 &lt;- <span class="keyword">function</span>(city, date)&#123;</span><br><span class="line">  date &lt;- paste(substring(date,first=<span class="number">0</span>, last=<span class="number">4</span>) , substring(date,first = <span class="number">6</span>,last = <span class="number">7</span>), sep =<span class="string">""</span>)</span><br><span class="line">  baseUrl &lt;- <span class="string">'http://lishi.tianqi.com/'</span></span><br><span class="line">  Url &lt;- paste(baseUrl, city, <span class="string">'/'</span>, date, <span class="string">'.html'</span>, sep = <span class="string">''</span>)</span><br><span class="line">  </span><br><span class="line">  content &lt;- Url %&gt;%</span><br><span class="line">    read_html(encoding=<span class="string">'GBK'</span>) %&gt;%</span><br><span class="line">    html_nodes(<span class="string">'div.tqtongji2'</span>) %&gt;%</span><br><span class="line">    html_nodes(<span class="string">"ul"</span>) %&gt;%</span><br><span class="line">    html_text() %&gt;%</span><br><span class="line">    strsplit(<span class="string">"\\s&#123;4,&#125;"</span>)</span><br><span class="line">  </span><br><span class="line">  content &lt;- ldply(content[-<span class="number">1</span>])</span><br><span class="line">  names(content) &lt;- c(<span class="string">'date'</span>, <span class="string">'highDegree'</span>, <span class="string">'lowDegree'</span>, <span class="string">'weather'</span>, <span class="string">'windDirection'</span>, <span class="string">'windForce'</span>)</span><br><span class="line">  <span class="keyword">return</span>(content) </span><br><span class="line">&#125;</span><br><span class="line">fetchPredict &lt;- <span class="keyword">function</span>(mode)</span><br><span class="line">&#123;</span><br><span class="line">  lng &lt;- c(<span class="number">113.3244465713</span>, <span class="number">115.89</span>, <span class="number">116.46</span>)</span><br><span class="line">  lat &lt;- c(<span class="number">23.1064679044</span>, <span class="number">28.68</span>, <span class="number">39.92</span>)</span><br><span class="line">  mode &lt;- as.numeric(mode)</span><br><span class="line">  print(mode)</span><br><span class="line">  print(lng[mode])</span><br><span class="line">  data &lt;- locationforecast(lat[mode], lng[mode])</span><br><span class="line">  <span class="keyword">return</span>(data)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ui类编写">ui类编写</h4>
+<p>先上图吧</p>
+<p><img src="https://img-blog.csdn.net/20180525110446817?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JBTFBIRkpZ/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述">
+<img src="https://img-blog.csdn.net/20180525110510201?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JBTFBIRkpZ/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述">
+<img src="https://img-blog.csdn.net/20180525110553940?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JBTFBIRkpZ/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述">
+<img src="https://img-blog.csdn.net/20180525110641794?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JBTFBIRkpZ/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>相应的有一些模块不满意就不展示了，虽然那个地图部分比较丑，暂时没有想到合理的布局来改善。</p>
+<p>这里相应的ui部分代码如下</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line">ui2 &lt;- dashboardPage(</span><br><span class="line">  </span><br><span class="line">  dashboardHeader(</span><br><span class="line">    <span class="comment">#title="Haide"</span></span><br><span class="line">    title = logo_blue_gradient,</span><br><span class="line">    tags$li(class = <span class="string">"dropdown"</span>, </span><br><span class="line">            uiOutput(<span class="string">"S"</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="comment">#sweetalert(selector = "#Signin", text = "Signin", title = "world")</span></span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#actionButton("Go","Go")</span></span><br><span class="line">  ),</span><br><span class="line">  dashboardSidebar(</span><br><span class="line">    sidebarMenu(</span><br><span class="line">      menuItem(<span class="string">"graphics"</span>, tabName = <span class="string">"graphics"</span>, icon = icon(<span class="string">"dashboard"</span>)),</span><br><span class="line">      menuItem(<span class="string">"table"</span>, icon = icon(<span class="string">"th"</span>), tabName = <span class="string">"table"</span>),</span><br><span class="line">      menuItem(<span class="string">"map"</span>, tabName = <span class="string">"map"</span>, icon = icon(<span class="string">"map-marker"</span>,lib = <span class="string">"glyphicon"</span>)),</span><br><span class="line">      menuItem(<span class="string">"predict"</span>, icon = icon(<span class="string">"flag"</span>,lib = <span class="string">"glyphicon"</span>), tabName = <span class="string">"predict"</span>),</span><br><span class="line">      menuItem(<span class="string">"feedback"</span>, tabName = <span class="string">"feedback"</span>, icon = icon(<span class="string">"pencil"</span>,lib = <span class="string">"glyphicon"</span>)),</span><br><span class="line">      menuItem(<span class="string">"user"</span>,tabName = <span class="string">"user"</span>,icon = icon(<span class="string">"user"</span>,lib = <span class="string">"glyphicon"</span>)),</span><br><span class="line">      menuItem(<span class="string">"info"</span>, icon = icon(<span class="string">"header"</span>,lib = <span class="string">"glyphicon"</span>), tabName = <span class="string">"info"</span>)</span><br><span class="line">    )</span><br><span class="line">  ),</span><br><span class="line">  dashboardBody(</span><br><span class="line">    <span class="comment">#theme="style.css",</span></span><br><span class="line">    shinyDashboardThemes(</span><br><span class="line">      theme = <span class="string">"blue_gradient"</span></span><br><span class="line">    ),</span><br><span class="line">    includeCSS(<span class="string">"www/style.css"</span>),</span><br><span class="line">    </span><br><span class="line">    fluidRow(</span><br><span class="line">      tabItems(</span><br><span class="line">        tabItem(tabName = <span class="string">"graphics"</span>,</span><br><span class="line">                sidebarLayout(</span><br><span class="line">                  position = <span class="string">"right"</span>,</span><br><span class="line">                  sidebarPanel(</span><br><span class="line">                    h4(<span class="string">"select what you want here"</span>),</span><br><span class="line">                    selectInput(<span class="string">"select"</span>, h3(<span class="string">"Select city"</span>), choices = </span><br><span class="line">                                  list(<span class="string">"广州"</span> = <span class="string">'guangzhou'</span>, <span class="string">"南昌"</span> = <span class="string">'nanchang'</span>,</span><br><span class="line">                                       <span class="string">"北京"</span> = <span class="string">'beijing'</span>), selected = <span class="number">2</span>),</span><br><span class="line">                    dateInput(<span class="string">"date"</span>, h3(<span class="string">"Date input"</span>), value = <span class="string">"2018-03-03"</span>),</span><br><span class="line">                    selectInput(<span class="string">"select_theme"</span>, h3(<span class="string">"Select theme"</span>), choices = list(<span class="string">"dust"</span> = <span class="string">"dust"</span>, <span class="string">"earth"</span> = <span class="string">"earth"</span>,<span class="string">"light"</span> = <span class="string">"light"</span>, <span class="string">"pale"</span> =<span class="string">"pale"</span> , <span class="string">"fresh"</span> = <span class="string">"fresh"</span>,<span class="string">"chalk"</span>=<span class="string">"chalk"</span>,<span class="string">"light"</span>=<span class="string">"light"</span>,<span class="string">"sky"</span>=<span class="string">"sky"</span>,<span class="string">"grass"</span>=<span class="string">"grass"</span>,<span class="string">"grape"</span>=<span class="string">"grape"</span>), selected = <span class="string">"fresh"</span>)</span><br><span class="line">                    ,bookmarkButton(id = <span class="string">"bookmark"</span>)</span><br><span class="line">                    </span><br><span class="line">                  ),</span><br><span class="line">                  mainPanel(</span><br><span class="line">                    plotOutput(<span class="string">"plot_point"</span>)%&gt;% withSpinner(type=<span class="number">4</span>),</span><br><span class="line">                    plotOutput(<span class="string">"plot_line"</span>)%&gt;% withSpinner(type=<span class="number">4</span>),</span><br><span class="line">                    plotOutput(<span class="string">"plot_bar"</span>)%&gt;% withSpinner(type=<span class="number">4</span>)</span><br><span class="line">                  )</span><br><span class="line">                )</span><br><span class="line">        ),</span><br><span class="line">        </span><br><span class="line">        tabItem(tabName = <span class="string">"table"</span>,</span><br><span class="line">                sidebarLayout(</span><br><span class="line">                  position = <span class="string">"right"</span>,</span><br><span class="line">                  sidebarPanel(</span><br><span class="line">                    h4(<span class="string">"select what you want here"</span>),</span><br><span class="line">                    selectInput(<span class="string">"select2"</span>, h3(<span class="string">"Select city"</span>), choices = </span><br><span class="line">                                  list(<span class="string">"广州"</span> = <span class="string">'guangzhou'</span>, <span class="string">"南昌"</span> = <span class="string">'nanchang'</span>,</span><br><span class="line">                                       <span class="string">"北京"</span> = <span class="string">'beijing'</span>), selected = <span class="number">2</span>),</span><br><span class="line">                    dateInput(<span class="string">"date2"</span>, h3(<span class="string">"Date input"</span>), value = <span class="string">"2018-03-03"</span>)</span><br><span class="line">                    ,downloadButton(<span class="string">"downloadData"</span>, <span class="string">"Download"</span>),</span><br><span class="line">                    </span><br><span class="line">                    checkboxGroupInput(<span class="string">"show_vars"</span>, <span class="string">"Columns in tables to show:"</span>,</span><br><span class="line">                                       c(<span class="string">"date"</span>=<span class="string">"date"</span>,<span class="string">"highDegree"</span>=<span class="string">"highDegree"</span>,<span class="string">"lowDegree"</span>=<span class="string">"lowDegree"</span>, <span class="string">"weather"</span>=<span class="string">"weather"</span>,<span class="string">"windDirection"</span>=<span class="string">"windDirection"</span>), selected = c(<span class="string">"date"</span>=<span class="string">"date"</span>,<span class="string">"highDegree"</span>=<span class="string">"highDegree"</span>,<span class="string">"lowDegree"</span>=<span class="string">"lowDegree"</span>, <span class="string">"weather"</span>=<span class="string">"weather"</span>,<span class="string">"windDirection"</span>=<span class="string">"windDirection"</span>)</span><br><span class="line">                                       </span><br><span class="line">                    )),</span><br><span class="line">                  mainPanel(</span><br><span class="line">                    DT::dataTableOutput(<span class="string">'table'</span>)%&gt;% withSpinner(type=<span class="number">4</span>)</span><br><span class="line">                  )</span><br><span class="line">                )</span><br><span class="line">                </span><br><span class="line">        ),</span><br><span class="line">        tabItem(tabName = <span class="string">"map"</span>,</span><br><span class="line">                sidebarPanel(</span><br><span class="line">                  h5(<span class="string">"basic geo information"</span>),</span><br><span class="line">                  textOutput(<span class="string">"geo"</span>)</span><br><span class="line">                  ,h5(<span class="string">"temparature now"</span>)</span><br><span class="line">                  ,textOutput(<span class="string">"wea"</span>)</span><br><span class="line">                ),</span><br><span class="line">                mainPanel(</span><br><span class="line">                  leafletOutput(<span class="string">"map"</span>)%&gt;% withSpinner(type=<span class="number">4</span>)</span><br><span class="line">                )</span><br><span class="line">        ),</span><br><span class="line">        </span><br><span class="line">        tabItem(tabName = <span class="string">"predict"</span>,</span><br><span class="line">                sidebarLayout(</span><br><span class="line">                  sidebarPanel(</span><br><span class="line">                    selectInput(<span class="string">"select4"</span>, h3(<span class="string">"Select city"</span>), choices = </span><br><span class="line">                                  list(<span class="string">"广州"</span> = <span class="number">1</span>, <span class="string">"南昌"</span> = <span class="number">2</span>,</span><br><span class="line">                                       <span class="string">"北京"</span> = <span class="number">3</span>), selected = <span class="number">2</span>),</span><br><span class="line">                    checkboxGroupInput(<span class="string">"show_vars2"</span>, <span class="string">"Columns in tables to show:"</span>,</span><br><span class="line">                                       c(<span class="string">"time"</span>=<span class="string">"time"</span>,<span class="string">"temperature"</span>=<span class="string">"temperature"</span>,<span class="string">"humidity"</span>=<span class="string">"humidity"</span>),selected = c(<span class="string">"time"</span>=<span class="string">"time"</span>,<span class="string">"temperature"</span>=<span class="string">"temperature"</span>,<span class="string">"humidity"</span>=<span class="string">"humidity"</span>))</span><br><span class="line">                    </span><br><span class="line">                  ),</span><br><span class="line">                  mainPanel(</span><br><span class="line">                    DT::dataTableOutput(<span class="string">'table4'</span>)%&gt;% withSpinner(type=<span class="number">4</span>)</span><br><span class="line">                  )</span><br><span class="line">                )</span><br><span class="line">        ),</span><br><span class="line">        tabItem(tabName = <span class="string">"feedback"</span>,</span><br><span class="line">                sidebarLayout(</span><br><span class="line">                  sidebarPanel(</span><br><span class="line">                    h5(<span class="string">"Thanks for giving us valuable feedback"</span>),</span><br><span class="line">                    actionButton(<span class="string">"reset"</span>, <span class="string">"Reset text"</span>),</span><br><span class="line">                    actionButton(<span class="string">"submit"</span>, <span class="string">"submit"</span>),</span><br><span class="line">                    material_button(</span><br><span class="line">                      input_id = <span class="string">"example_button"</span>,</span><br><span class="line">                      label = <span class="string">"BUTTON"</span>,</span><br><span class="line">                      depth = <span class="number">10</span></span><br><span class="line">                    )</span><br><span class="line">                  ),</span><br><span class="line">                  </span><br><span class="line">                  mainPanel(</span><br><span class="line">                    aceEditor(<span class="string">"ace"</span>,fontSize = <span class="number">20</span>,autoComplete = <span class="string">"enabled"</span>,theme=<span class="string">"ambiance"</span>)</span><br><span class="line">                  )</span><br><span class="line">                )</span><br><span class="line">        ),</span><br><span class="line">        tabItem(tabName = <span class="string">"user"</span>,</span><br><span class="line">                uiOutput(<span class="string">"user-info"</span>)</span><br><span class="line">        ),</span><br><span class="line">        tabItem(tabName = <span class="string">"info"</span>,</span><br><span class="line">                sidebarLayout(</span><br><span class="line">                  sidebarPanel(<span class="string">"information"</span>,</span><br><span class="line">                               h5(<span class="string">"maintainer: Ralph Haide"</span>),</span><br><span class="line">                               h5(<span class="string">"version: 1.3.0"</span>),</span><br><span class="line">                               h6(<span class="string">"contact me:"</span>),</span><br><span class="line">                               a(<span class="string">"ralphshaides@gmail.com"</span>)</span><br><span class="line">                               </span><br><span class="line">                  ),</span><br><span class="line">                  mainPanel(</span><br><span class="line">                    </span><br><span class="line">                    img(src=<span class="string">"https://s1.ax1x.com/2018/04/15/CeieW6.png"</span>,width=<span class="number">200</span>,height=<span class="number">200</span>),</span><br><span class="line">                    br(),</span><br><span class="line">                    h2(<span class="string">"Haide"</span>,aign=<span class="string">"center"</span>),</span><br><span class="line">                    h3(<span class="string">"a simple weather application powered by shiny"</span>,align=<span class="string">"left"</span>),</span><br><span class="line">                    h5(<span class="string">"technology used: "</span>,<span class="string">","</span>,a(<span class="string">"R"</span>,href=<span class="string">"https://www.r-project.org/"</span>),<span class="string">","</span>, a(<span class="string">"shiny"</span>,href=<span class="string">"http://shiny.rstudio.com/"</span>) ,<span class="string">","</span>, <span class="string">"Crawler"</span> ,<span class="string">","</span>, a(<span class="string">"ggplot2"</span>,href=<span class="string">"http://ggplot2.org/"</span>)),</span><br><span class="line">                    h5(<span class="string">"library used:"</span>, a(<span class="string">"shiny"</span>,href=<span class="string">"http://shiny.rstudio.com/"</span>) , a(<span class="string">"DT"</span>), a(<span class="string">"ggplot2"</span>,href=<span class="string">"http://ggplot2.org/"</span>), a(<span class="string">"ggthemr"</span>,href=<span class="string">"https://cran.r-project.org/web/packages/ggthemes/index.html"</span>), a(<span class="string">"plyr"</span>,href=<span class="string">"https://cran.r-project.org/web/packages/plyr/index.html"</span>), a(<span class="string">"rvest"</span>,href=<span class="string">"https://cran.r-project.org/web/packages/rvest/index.html"</span>),a(<span class="string">"weatherR"</span>,href=<span class="string">"https://cran.r-project.org/web/packages/weatherr/index.html"</span>))</span><br><span class="line">                    ,includeMarkdown(<span class="string">"log.md"</span>)</span><br><span class="line">                  )                    </span><br><span class="line">                )</span><br><span class="line">        )</span><br><span class="line">      ))</span><br><span class="line">  )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>这里主要就是安排布局与相应的输入输出单元</p>
+<h4 id="server端编写">server端编写</h4>
+<p>这里的server端主要处理网站的输出做逻辑规划，使用render类函数来对网站进行渲染。具体请查看相应文档。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line">server &lt;- <span class="keyword">function</span>(input, output,session) &#123;</span><br><span class="line">  </span><br><span class="line">  output$selected_var &lt;- renderText(&#123; </span><br><span class="line">    paste(<span class="string">"city selected: "</span> , input$select, <span class="string">" "</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  output$plot_point &lt;- renderPlot(&#123;</span><br><span class="line">    ggthemr(input$select_theme)</span><br><span class="line">    name &lt;- as.character(input$date)</span><br><span class="line">    city &lt;- input$select</span><br><span class="line">    name &lt;- paste(substring(name,first=<span class="number">0</span>, last=<span class="number">4</span>) , substring(name,first = <span class="number">6</span>,last = <span class="number">7</span>), sep =<span class="string">""</span>)</span><br><span class="line">    weatherData &lt;- fetchData(city,name)</span><br><span class="line">    len &lt;- length(weatherData$date)</span><br><span class="line">    ggplot(weatherData, aes(x=lowDegree, y=highDegree)) + geom_point()</span><br><span class="line">  &#125;)</span><br><span class="line">  output$plot_bar &lt;- renderPlot(&#123;</span><br><span class="line">    ggthemr(input$select_theme)</span><br><span class="line">    name &lt;- as.character(input$date)</span><br><span class="line">    city &lt;- input$select</span><br><span class="line">    name &lt;- paste(substring(name,first=<span class="number">0</span>, last=<span class="number">4</span>) , substring(name,first = <span class="number">6</span>,last = <span class="number">7</span>), sep =<span class="string">""</span>)</span><br><span class="line">    weatherData &lt;- fetchData(city,name)</span><br><span class="line">    len &lt;- length(weatherData$date)</span><br><span class="line">    day &lt;- rep(seq(<span class="number">1</span>, len),<span class="number">2</span>)</span><br><span class="line">    day &lt;- day + <span class="number">1</span></span><br><span class="line">    degrees &lt;- as.numeric(c(weatherData$lowDegree, weatherData$highDegre))</span><br><span class="line">    tags &lt;- rep(c(<span class="string">"low"</span>,<span class="string">"high"</span>),each=len)</span><br><span class="line">    data &lt;- data.frame(day, degrees,tags)</span><br><span class="line">    option = input$select_shape</span><br><span class="line">    option = as.numeric(option)</span><br><span class="line">    ggplot(data, aes(x = day, y = degrees , fill=tags)) +geom_bar(stat= <span class="string">'identity'</span>, width = <span class="number">0.5</span>, position =  position_dodge(<span class="number">0.7</span>))</span><br><span class="line">  &#125;)</span><br><span class="line">  output$plot_line &lt;- renderPlot(&#123;</span><br><span class="line">    ggthemr(input$select_theme)</span><br><span class="line">    name &lt;- as.character(input$date)</span><br><span class="line">    city &lt;- input$select</span><br><span class="line">    name &lt;- paste(substring(name,first=<span class="number">0</span>, last=<span class="number">4</span>) , substring(name,first = <span class="number">6</span>,last = <span class="number">7</span>), sep =<span class="string">""</span>)</span><br><span class="line">    weatherData &lt;- fetchData(city,name)</span><br><span class="line">    len &lt;- length(weatherData$date)</span><br><span class="line">    day &lt;- rep(seq(<span class="number">1</span>, len),<span class="number">2</span>)</span><br><span class="line">    day &lt;- day + <span class="number">1</span></span><br><span class="line">    degrees &lt;- as.numeric(c(weatherData$lowDegree, weatherData$highDegre))</span><br><span class="line">    tags &lt;- rep(c(<span class="string">"low"</span>,<span class="string">"high"</span>),each=len)</span><br><span class="line">    data &lt;- data.frame(day, degrees,tags)</span><br><span class="line">    option = input$select_shape</span><br><span class="line">    option = as.numeric(option)</span><br><span class="line">    ggplot(data, aes(x = day, y = degrees , color=tags)) + geom_point() + geom_line()</span><br><span class="line">  &#125;)</span><br><span class="line">  output$table &lt;- DT::renderDataTable(&#123;</span><br><span class="line">    fetchData2(input$select2,as.character(input$date2))[,input$show_vars, drop=<span class="literal">FALSE</span>]</span><br><span class="line">  &#125;</span><br><span class="line">  )</span><br><span class="line">  output$table4 &lt;- DT::renderDataTable(&#123;</span><br><span class="line">    fetchPredict(input$select4)[,input$show_vars2, drop=<span class="literal">FALSE</span>]</span><br><span class="line">  &#125;</span><br><span class="line">  )</span><br><span class="line">  output$downloadData &lt;- downloadHandler(</span><br><span class="line">    filename = <span class="keyword">function</span>() &#123;</span><br><span class="line">      paste(<span class="string">'data-'</span>, Sys.Date(), <span class="string">'.csv'</span>, sep=<span class="string">''</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    content = <span class="keyword">function</span>(con) &#123;</span><br><span class="line">      data &lt;- fetchData2(input$select2,as.character(input$date2))</span><br><span class="line">      write.csv(data[,-<span class="number">1</span>], con,row.names = <span class="literal">TRUE</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">  observeEvent(input$bookmark, &#123;</span><br><span class="line">    session$doBookmark()</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  output$map &lt;- renderLeaflet(&#123;</span><br><span class="line">    leaflet() %&gt;%</span><br><span class="line">      addTiles() %&gt;%  </span><br><span class="line">      addMarkers(lng=<span class="number">115.89</span>, lat=<span class="number">28.68</span>,</span><br><span class="line">                 popup=<span class="string">"南昌"</span>,label = <span class="string">"南昌"</span>) %&gt;%</span><br><span class="line">      addMarkers(lng=<span class="number">113.3244465713</span>,lat=<span class="number">23.1064679044</span>,popup=<span class="string">"广州"</span>,label = <span class="string">"广州"</span>) %&gt;%</span><br><span class="line">      addMarkers(lng=<span class="number">116.46</span>,lat=<span class="number">39.92</span>,popup=<span class="string">"北京"</span>,label = <span class="string">"北京"</span>) %&gt;%</span><br><span class="line">      addMarkers(lng=<span class="number">114.30</span>, lat=<span class="number">30.60</span>,popup=<span class="string">"武汉"</span>,label = <span class="string">"武汉"</span>)%&gt;%addMiniMap()%&gt;%addMeasure()</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">  &#125;)</span><br><span class="line">  observeEvent(input$map_marker_click,&#123;</span><br><span class="line">    print(<span class="string">"observed map_marker_click"</span>)</span><br><span class="line">    p &lt;- input$map_marker_click</span><br><span class="line">    print(p)</span><br><span class="line">    str &lt;- paste(p$lat,<span class="string">" , "</span>,p$lng)</span><br><span class="line">    print(str)</span><br><span class="line">    output$geo &lt;- renderText(&#123; </span><br><span class="line">      str</span><br><span class="line">    &#125;)</span><br><span class="line">    output$wea &lt;- renderText(&#123;</span><br><span class="line">      data &lt;- locationforecast(p$lat, p$lng)</span><br><span class="line">      as.character(data$temperature[<span class="number">1</span>])</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  observeEvent(input$map_click,&#123;</span><br><span class="line">    print(<span class="string">"observed map_marker_click"</span>)</span><br><span class="line">    p &lt;- input$map_click</span><br><span class="line">    print(p)</span><br><span class="line">    str &lt;- paste(p$lat,<span class="string">" , "</span>,p$lng)</span><br><span class="line">    print(str)</span><br><span class="line">    output$geo &lt;- renderText(&#123; </span><br><span class="line">      str</span><br><span class="line">    &#125;)</span><br><span class="line">    output$wea &lt;- renderText(&#123;</span><br><span class="line">      data &lt;- locationforecast(p$lat, p$lng)</span><br><span class="line">      as.character(data$temperature[<span class="number">1</span>])</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  )</span><br><span class="line">  observeEvent(input$reset, &#123;</span><br><span class="line">    updateAceEditor(session, <span class="string">"ace"</span>, value = <span class="string">""</span>)</span><br><span class="line">    </span><br><span class="line">  &#125;)</span><br><span class="line">  observeEvent(input$submit,&#123;</span><br><span class="line">    str = as.character(input$ace)</span><br><span class="line">    print(str)</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  output$S &lt;- renderUI(&#123;</span><br><span class="line">    <span class="keyword">if</span> (!s$signin)&#123;</span><br><span class="line">      actionButton(<span class="string">"Signin"</span>, <span class="string">"signin"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="comment">#actionButton("Signi", "Signi") </span></span><br><span class="line">      img(src=<span class="string">"user.png"</span>,width = <span class="number">40</span>, height = <span class="number">40</span>,align=<span class="string">"left"</span>,id=<span class="string">"user"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  observeEvent(input$Signin, &#123;</span><br><span class="line">    sendSweetAlert(</span><br><span class="line">      session = session,</span><br><span class="line">      title = <span class="string">"Success !!"</span>,</span><br><span class="line">      text = <span class="string">"All in order"</span>,</span><br><span class="line">      type = <span class="string">"success"</span></span><br><span class="line">    )</span><br><span class="line">    s$signin = <span class="literal">TRUE</span></span><br><span class="line">    <span class="comment">#print(signin)</span></span><br><span class="line">  &#125;)</span><br><span class="line">  output$<span class="string">"user-info"</span> &lt;- renderUI(&#123;</span><br><span class="line">    <span class="keyword">if</span> (!s$signin)&#123;</span><br><span class="line">      h3(<span class="string">"you are not allowed to view this page before signin"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      fluidRow(</span><br><span class="line">        sidebarLayout(</span><br><span class="line">          sidebarPanel(),</span><br><span class="line">          mainPanel(</span><br><span class="line">            valueBox(<span class="number">10</span> * <span class="number">2</span>, <span class="string">"New Orders"</span>, icon = icon(<span class="string">"credit-card"</span>))</span><br><span class="line">          )</span><br><span class="line">        )</span><br><span class="line">      ) </span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="网站应用的运行与部署">网站应用的运行与部署</h4>
+<p>若需要运行该应用，需要添加下面的一份代码</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app &lt;- shinyApp(ui = ui2, server = server)</span><br></pre></td></tr></table></figure>
+<p><a href="http://xn--shinyapps-zg3o47dj56cnrfvr9ark0fssln61d.io" target="_blank" rel="noopener">若希望将其部署到shinyapps.io</a>，可以使用rstudio的相应publish功能，添加相应shinyapps.io账户，进行部署</p>
+<h4 id="此外">此外</h4>
+<p>这里展示了部分代码，若需要查看完整代码，欢迎来fork该项目<a href="https://github.com/RalphWithoutMissFun/Haide" target="_blank" rel="noopener">Haide</a></p>
+<h4 id="相应学习资源">相应学习资源</h4>
+<ul>
+<li><a href="https://shiny.rstudio.com/" target="_blank" rel="noopener">shiny官网</a></li>
+<li><a href="https://github.com/grabear/awesome-rshiny" target="_blank" rel="noopener">shinytools</a></li>
+</ul>
+
+    
+    </div>
+    
+    
+        <div class="article-comment" id="article-comment">
+            
+
+<h1>Comment</h1>
+
+  
+    <div id="valine"></div>
+  
+
+
+        </div>
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> Copyright by <a href="">Ralph H </a> @ 2019</p>
+            <p>Designed by: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> and <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; Theme: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-Taurus</a> &bull; Powered by <a href="http://hexo.io">Hexo.</a></p>
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/RalphWithoutMissFun" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">shiny应用与搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简介"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用的包"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">使用的包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据获取"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">数据获取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ui类编写"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">ui类编写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#server端编写"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">server端编写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网站应用的运行与部署"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">网站应用的运行与部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#此外"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">此外</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#相应学习资源"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">相应学习资源</span></a></li></ol></li></ol>
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons/blue-shadow/toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="Archives">
+			<img src="/images/icons/blue-shadow/archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="Search">
+			<img src="/images/icons/blue-shadow/search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons/blue-shadow/menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+    
+    
+    
+    
+<script>
+    new Valine({
+        el: '#valine',
+        notify:false, 
+        verify:false,
+        appId: 'W37TluhbhyTweMeX5SuS2P2u-gzGzoHsz',
+        appKey: 'qBoo1UkA3IKNnVuYNav04ARX',
+        placeholder: '',
+        path:window.location.pathname, 
+        avatar:'retro',
+        lang: 'en'
+    });
+</script>
+
+
+
+
+
+
+
+
+    <script src="/js/lightgallery.min.js"></script>
+<script src="/js/lg-zoom.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery(); 
+        $(".article-content img").each(function(){
+            console.log($(this).attr('src'))
+            $(this).attr('data-src', $(this).attr('src')).lightGallery({
+                selector: 'this'
+            })
+        });
+    });
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('hashit_41bc77c9fc7e4df8bbda0ad92e214638bd6913a1eba0a270cee5a7c152c79e9f').update('hashit_e542a9cd0864633774f8f6b27a1d9b068c7dcad2df07b0c3d28376592fba3753', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('W37TluhbhyTweMeX5SuS2P2u-gzGzoHsz', 'qBoo1UkA3IKNnVuYNav04ARX');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2019/06/23/系统分析大作业系列博客二/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2019/06/23/系统分析大作业系列博客二/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2019/06/23/系统分析大作业系列博客二/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2019/06/23/系统分析大作业系列博客二/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2019/06/23/系统分析大作业系列博客二/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2019/06/23/系统分析大作业系列博客二/', json.ip);
+    leanCloud.fetchCommentCount('/2019/06/23/系统分析大作业系列博客二/');
+    leanCloud.fetchVisitCount('/2019/06/23/系统分析大作业系列博客二/');
+    leanCloud.fetchThumbUpCount('/2019/06/23/系统分析大作业系列博客二/');
+    leanCloud.getCommentCount('/2019/06/23/系统分析大作业系列博客二/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2019/06/23/系统分析大作业系列博客二/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2019/06/23/系统分析大作业系列博客二/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2019/06/23/系统分析大作业系列博客二/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('W37TluhbhyTweMeX5SuS2P2u-gzGzoHsz', 'qBoo1UkA3IKNnVuYNav04ARX');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
